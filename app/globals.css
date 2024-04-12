@@ -1,0 +1,156 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "PingFangTC-Regular";
+  src: url("./fonts/PingFang-TC-Regular.otf") format("opentype");
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "PingFangTC-Medium";
+  src: url("./fonts/PingFangTC-Medium.ttf") format("truetype");
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "PingFangTC-Heavy";
+  src: url("./fonts/PingFangTC-Heavy.ttf") format("truetype");
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "NotoSerifTC-Bold";
+  src: url("./fonts/NotoSerifTC-Bold.otf") format("opentype");
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "NotoSerifTC-SemiBold";
+  src: url("./fonts/NotoSerifTC-SemiBold.otf") format("opentype");
+  font-style: normal;
+  font-display: swap;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.font-pingfang-regular {
+  font-family: "PingFangTC-Regular", sans-serif;
+}
+.font-pingfang-medium {
+  font-family: "PingFangTC-Medium", sans-serif;
+}
+.font-pingfang-heavy {
+  font-family: "PingFangTC-Heavy", sans-serif;
+}
+
+.font-notoSerif-bold {
+  font-family: "NotoSerifTC-Bold", sans-serif;
+}
+.font-notoSerif-semiBold {
+  font-family: "NotoSerifTC-SemiBold", sans-serif;
+}
+
+
+
+.card {
+  position: relative;
+  transition: background-position 0.5s;
+  overflow: hidden;
+}
+.card-one {
+  position: relative;
+}
+
+.card-one::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url("/assets/card-1.png");
+  background-size: cover;
+  background-position: center;
+  transition: transform 0.3s ease;
+  z-index: 0;
+}
+
+.card-two {
+  position: relative;
+}
+
+.card-two::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url("/assets/card-2.png");
+  background-size: cover;
+  background-position: center;
+  transition: transform 0.3s ease;
+  z-index: 0;
+}
+
+.card-three {
+  position: relative;
+}
+
+.card-three::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url("/assets/card-3.png");
+  background-size: cover;
+  background-position: center;
+  transition: transform 0.3s ease;
+  z-index: 0;
+}
+
+.card:hover::before {
+  transform: scale(1.1);
+}
+
+.card-content {
+  z-index: 2;
+}
+
+.card-overlay {
+  background: rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+
+.hover-content {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: transform 0.5s, opacity 0.5s;
+}
+
+.card:hover .hover-content {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.card:hover .card-overlay {
+  opacity: 1;
+}
