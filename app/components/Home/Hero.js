@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect ,useRef } from "react";
+import React, { useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Link } from "react-scroll";
 import { MdOutlineKeyboardArrowRight } from "react-icons/md";
@@ -9,35 +9,12 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/bundle";
 
-
-import AOS from 'aos';
-import 'aos/dist/aos.css';
-
-
 import "./hero.css";
 
 // import required modules
 import { Pagination, Autoplay } from "swiper/modules";
 
-
 const Hero = () => {
-
-  const swiperRef = useRef(null);
-
-
-  useEffect(() => {
-    AOS.init({
-      duration: 1000, // values from 0 to 3000, with step 50ms
-      once: false, // whether animation should happen only once - while scrolling down
-      mirror: true, // whether elements should animate out while scrolling past them
-    });
-  }, []);
-
-  const handleSlideChange = () => {
-    AOS.refresh(); // This resets the AOS animations
-  };
-
-
   const slides = [
     {
       bgImage: "/assets/Carousel-1.jpg",
@@ -56,10 +33,11 @@ const Hero = () => {
     },
   ];
 
+  const [activeSlide, setActiveSlide] = useState(0);
+
   return (
     <section className="h-[700px] md:h-[812px] relative">
       <Swiper
-      onSlideChange={handleSlideChange}
         pagination={{
           clickable: true,
           el: ".swiper-pagination",
@@ -71,7 +49,7 @@ const Hero = () => {
           disableOnInteraction: false,
         }}
         className="mySwiper h-[700px] md:h-[812px]"
-        ref={swiperRef}
+        onSlideChange={(swiper) => setActiveSlide(swiper.activeIndex)}
       >
         {slides.map((slide, index) => (
           <SwiperSlide
@@ -84,17 +62,36 @@ const Hero = () => {
               position: "relative",
             }}
           >
-            <div className="text-white max-w-[1212px] w-full mx-auto flex items-center md:items-start justify-between md:justify-start flex-col md:h-auto h-full pb-24 md:pb-0 pt-48 md:pt-0">
-              <h2
-                data-aos="fade-up"
-                className="text-[32px] md:text-[64px] font-bold font-notoSerif-bold tracking-[0.025em]"
-                style={{ textShadow: "0px 0px 20px #082D5C" }}
+            <div
+              className={`text-white max-w-[1212px] w-full mx-auto flex items-center md:items-start justify-between md:justify-start flex-col md:h-auto h-full pb-24 md:pb-0 pt-48 md:pt-0             `}
+            >
+              <div
+                className={`flex flex-col gap-5 ${
+                  index === activeSlide ? "animate-slideIn" : ""
+                }`}
               >
-                {slide.heading}
-              </h2>
-              <div className="flex flex-col items-center gap-4 md:gap-10 mt-6" data-aos="fade-up">
+                <h2
+                  data-aos="fade-up"
+                  className="text-[32px] md:text-[64px] font-bold font-notoSerif-bold tracking-[0.025em]
+                   
+                  "
+                  style={{ textShadow: "0px 0px 20px #082D5C" }}
+                >
+                  {slide.heading}
+                </h2>
                 <h4
-                  className="text-xl md:text-[36px] font-pingfang-heavy tracking-[0.020sem]"
+                  className="hidden md:block text-xl md:text-[36px] font-pingfang-heavy tracking-[0.020sem]"
+                  style={{ textShadow: "0px 0px 20px #082D5C" }}
+                >
+                  {slide.subheading}
+                </h4>
+              </div>
+              <div
+                className="flex flex-col items-center gap-4 mt-10"
+                data-aos="fade-up"
+              >
+                <h4
+                  className="block md:hidden text-xl md:text-[36px] font-pingfang-heavy tracking-[0.020sem]"
                   style={{ textShadow: "0px 0px 20px #082D5C" }}
                 >
                   {slide.subheading}
@@ -116,9 +113,8 @@ const Hero = () => {
         ))}
       </Swiper>
 
-
       {/* Pagination Bulletts  */}
-      <div className="absolute top-[506px] md:top-[406px] z-40 right-4 md:right-16">
+      <div className="absolute top-[506px] md:top-[360px] z-40 right-4 md:right-12">
         <div className="w-[25px] flex flex-col items-center justify-center gap-2">
           <div className="swiper-pagination"></div>
         </div>

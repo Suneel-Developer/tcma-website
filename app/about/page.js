@@ -18,6 +18,7 @@ import { Link } from "react-scroll";
 
 const About = () => {
   const [fixed, setFixed] = useState(false);
+  const [activeLink, setActiveLink] = useState("");
   const introductionRef = useRef(null);
   const relatedLinksRef = useRef(null);
 
@@ -30,7 +31,6 @@ const About = () => {
         relatedLinksRef.current?.getBoundingClientRect().top + window.scrollY;
       const scrollY = window.scrollY;
 
-      // Check if the user has scrolled past the Introduction component and not reached RelatedLinks yet
       if (scrollY >= introBottom && scrollY < relatedTop) {
         setFixed(true);
       } else {
@@ -38,12 +38,14 @@ const About = () => {
       }
     };
 
-    // Add the event listener
     window.addEventListener("scroll", handleScroll, { passive: true });
-
-    // Remove the event listener on cleanup
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  const handleSetActive = (id) => {
+    setActiveLink(id);
+  };
+
   return (
     <section>
       <Header />
@@ -72,141 +74,37 @@ const About = () => {
                 fixed ? "fixed top-40" : ""
               } z-50`}
             >
-              {/* Introduction  */}
-              <li>
-                <Link
-                  to="introduction"
-                  spy={true}
-                  smooth={true}
-                  offset={-70}
-                  duration={500}
-                  className="flex items-center gap-2 cursor-pointer"
-                >
-                  <div className="w-2 h-2 rounded-full bg-gray"></div>
-                  <span className="text-base tracking-[0.006em] font-pingfang-medium text-gray">
-                    引言
-                  </span>
-                </Link>
-              </li>
-
-              {/* TechnicalClimbing  */}
-              <li>
-                <Link
-                  to="technicalClimbing"
-                  spy={true}
-                  smooth={true}
-                  offset={-70}
-                  duration={500}
-                  className="flex items-center gap-2 cursor-pointer"
-                >
-                  <div className="w-2 h-2 rounded-full bg-gray"></div>
-                  <span className="text-base tracking-[0.006em] font-pingfang-medium text-gray">
-                    技術攀登面面觀
-                  </span>
-                </Link>
-              </li>
-
-              {/* SportClimbing */}
-              <li>
-                <Link
-                  to="sportClimbing"
-                  spy={true}
-                  smooth={true}
-                  offset={-70}
-                  duration={500}
-                  className="flex items-center gap-2 cursor-pointer"
-                >
-                  <div className="w-2 h-2 rounded-full bg-gray"></div>
-                  <span className="text-base tracking-[0.006em] font-pingfang-medium text-gray">
-                    運動攀登
-                  </span>
-                </Link>
-              </li>
-
-              {/* Pitches */}
-              <li>
-                <Link
-                  to="pitches"
-                  spy={true}
-                  smooth={true}
-                  offset={-70}
-                  duration={500}
-                  className="flex items-center gap-2 cursor-pointer"
-                >
-                  <div className="w-2 h-2 rounded-full bg-gray"></div>
-                  <span className="text-base tracking-[0.006em] font-pingfang-medium text-gray">
-                    單繩距、多繩距
-                  </span>
-                </Link>
-              </li>
-
-              {/* WallClimbing */}
-              <li>
-                <Link
-                  to="wallClimbing"
-                  spy={true}
-                  smooth={true}
-                  offset={-70}
-                  duration={500}
-                  className="flex items-center gap-2 cursor-pointer"
-                >
-                  <div className="w-2 h-2 rounded-full bg-gray"></div>
-                  <span className="text-base tracking-[0.006em] font-pingfang-medium text-gray">
-                    大岩壁攀登
-                  </span>
-                </Link>
-              </li>
-
-              {/* BoulderingSolo */}
-              <li>
-                <Link
-                  to="boulderingSolo"
-                  spy={true}
-                  smooth={true}
-                  offset={-70}
-                  duration={500}
-                  className="flex items-center gap-2 cursor-pointer"
-                >
-                  <div className="w-2 h-2 rounded-full bg-gray"></div>
-                  <span className="text-base tracking-[0.006em] font-pingfang-medium text-gray">
-                    抱石、獨攀
-                  </span>
-                </Link>
-              </li>
-
-              {/* OfficialEvent */}
-              <li>
-                <Link
-                  to="officialEvent"
-                  spy={true}
-                  smooth={true}
-                  offset={-70}
-                  duration={500}
-                  className="flex items-center gap-2 cursor-pointer"
-                >
-                  <div className="w-2 h-2 rounded-full bg-gray"></div>
-                  <span className="text-base tracking-[0.006em] font-pingfang-medium text-gray">
-                    奧運正式比賽項目
-                  </span>
-                </Link>
-              </li>
-
-              {/* IceClimbing */}
-              <li>
-                <Link
-                  to="iceClimbing"
-                  spy={true}
-                  smooth={true}
-                  offset={-70}
-                  duration={500}
-                  className="flex items-center gap-2 cursor-pointer"
-                >
-                  <div className="w-2 h-2 rounded-full bg-gray"></div>
-                  <span className="text-base tracking-[0.006em] font-pingfang-medium text-gray">
-                    冰攀
-                  </span>
-                </Link>
-              </li>
+              {[
+                { name: "引言", id: "introduction" },
+                { name: "技術攀登面面觀", id: "technicalClimbing" },
+                { name: "運動攀登", id: "sportClimbing" },
+                { name: "單繩距、多繩距", id: "pitches" },
+                { name: "大岩壁攀登", id: "wallClimbing" },
+                { name: "抱石、獨攀", id: "boulderingSolo" },
+                { name: "奧運正式比賽項目", id: "officialEvent" },
+                { name: "冰攀", id: "iceClimbing" },
+              ].map((link) => (
+                <li key={link.id}>
+                  <Link
+                    to={link.id}
+                    spy={true}
+                    smooth={true}
+                    offset={-70}
+                    duration={500}
+                    className={`flex items-center gap-2 cursor-pointer ${
+                      activeLink === link.id ? "text-orange_brown" : "text-gray"
+                    }`}
+                    onSetActive={() => handleSetActive(link.id)}
+                  >
+                    <div className={`w-2 h-2 rounded-full ${activeLink === link.id ? 'bg-primary' : 'bg-gray'}`}
+                    
+                    ></div>
+                    <span className="text-base tracking-[0.006em] font-pingfang-medium">
+                      {link.name}
+                    </span>
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
           <div className="flex-1 justify-center">
