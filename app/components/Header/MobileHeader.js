@@ -46,9 +46,9 @@ const DropdownMenu = () => {
         </div>
 
         {isOpen && (
-          <div className="dropdownMenu absolute top-[60px] left-0 bottom-0 h-screen w-full bg-[#F8F9F4] border-t border-t-[#CDCEC7] p-4 z-50">
+          <div className="dropdownMenu absolute top-[60px] left-0 bottom-0 h-screen w-full bg-[#F8F9F4] border-t border-t-[#CDCEC7] p-4 z-[1001]">
             {activeMenu === "main" ? (
-              <ul className="flex flex-col gap-4">
+              <ul className="flex flex-col gap-4 p-4">
                 {mainLinks.map((link) => (
                   <li
                     key={link.submenu}

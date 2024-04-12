@@ -118,7 +118,7 @@ const Hero = () => {
 
 
       {/* Pagination Bulletts  */}
-      <div className="absolute top-[506px] md:top-[406px] z-50 right-4 md:right-16">
+      <div className="absolute top-[506px] md:top-[406px] z-40 right-4 md:right-16">
         <div className="w-[25px] flex flex-col items-center justify-center gap-2">
           <div className="swiper-pagination"></div>
         </div>
