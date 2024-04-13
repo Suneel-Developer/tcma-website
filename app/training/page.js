@@ -1,22 +1,22 @@
 "use client";
 
 import React, { useState, useEffect, useRef } from "react";
-import BoulderingSolo from "../components/About/BoulderingSolo";
-import Hero from "../components/About/Hero";
-import IceClimbing from "../components/About/IceClimbing";
-import Introduction from "../components/About/Introduction";
-import OfficialEvent from "../components/About/OfficialEvent";
-import Pitches from "../components/About/Pitches";
-import RelatedLinks from "../components/About/RelatedLinks";
-import SportClimbing from "../components/About/SportClimbing";
-import TechnicalClimbing from "../components/About/TechnicalClimbing";
-import WallClimbing from "../components/About/WallClimbing";
+import BoulderingSolo from "../components/Training/BoulderingSolo";
+import Hero from "../components/Training/Hero";
+import IceClimbing from "../components/Training/IceClimbing";
+import Introduction from "../components/Training/Introduction";
+import OfficialEvent from "../components/Training/OfficialEvent";
+import Pitches from "../components/Training/Pitches";
+import RelatedLinks from "../components/Training/RelatedLinks";
+import SportClimbing from "../components/Training/SportClimbing";
+import TechnicalClimbing from "../components/Training/TechnicalClimbing";
+import WallClimbing from "../components/Training/WallClimbing";
 import Footer from "../components/Footer/Footer";
 import Header from "../components/Header/Header";
 import MobileHeader from "../components/Header/MobileHeader";
 import { Link } from "react-scroll";
 
-const About = () => {
+const Training = () => {
   const [fixed, setFixed] = useState(false);
   const [activeLink, setActiveLink] = useState("");
   const introductionRef = useRef(null);
@@ -96,8 +96,10 @@ const About = () => {
                     }`}
                     onSetActive={() => handleSetActive(link.id)}
                   >
-                    <div className={`w-2 h-2 rounded-full ${activeLink === link.id ? 'bg-primary' : 'bg-gray'}`}
-                    
+                    <div
+                      className={`w-2 h-2 rounded-full ${
+                        activeLink === link.id ? "bg-primary" : "bg-gray"
+                      }`}
                     ></div>
                     <span className="text-base tracking-[0.006em] font-pingfang-medium">
                       {link.name}
@@ -147,4 +149,4 @@ const About = () => {
   );
 };
 
-export default About;
+export default Training;
