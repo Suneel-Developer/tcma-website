@@ -75,13 +75,13 @@ const Hero = () => {
                   className="text-[32px] md:text-[64px] font-bold font-notoSerif-bold tracking-[0.025em]
                    
                   "
-                  style={{ textShadow: "0px 0px 20px #082D5C" }}
+                  style={{ textShadow: "0px 0px 15px #082D5C" }}
                 >
                   {slide.heading}
                 </h2>
                 <h4
                   className="hidden md:block text-xl md:text-[36px] font-pingfang-heavy tracking-[0.020sem]"
-                  style={{ textShadow: "0px 0px 20px #082D5C" }}
+                  style={{ textShadow: "0px 0px 10px #082D5C" }}
                 >
                   {slide.subheading}
                 </h4>

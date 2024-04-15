@@ -22,7 +22,7 @@ const SeedProject = () => {
             透過培訓和資源支持，栽培年輕的攀登愛好者，在國內外發展才華和熱情，讓更多的人有機會接觸並學習技術攀登。
           </p>
           <Link
-            href="#"
+            href="/seed-project"
             className="lg:hidden bg-orange_brown hover:bg-white mt-2 border-2 border-orange_brown px-5 md:px-6 py-2 md:py-3 flex gap-2 items-center text-white hover:text-orange_brown transition-colors duration-300 w-fit text-sm md:text-2xl tracking-[0.006em] font-pingfang-heavy"
           >
             加入種子培育計畫
@@ -37,7 +37,7 @@ const SeedProject = () => {
               透過培訓和資源支持，栽培年輕的攀登愛好者，在國內外發展才華和熱情，讓更多的人有機會接觸並學習技術攀登。
             </p>
             <Link
-              href="#"
+              href="/seed-project"
               className="bg-orange_brown hover:bg-white border-2 border-orange_brown px-6 py-3 flex mt-10 gap-2 items-center text-white hover:text-orange_brown transition-colors duration-300 w-fit text-sm md:text-2xl  tracking-[0.006em] font-pingfang-heavy"
             >
               加入種子培育計畫

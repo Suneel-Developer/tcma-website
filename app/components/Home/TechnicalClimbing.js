@@ -9,7 +9,7 @@ import { SwiperBtns } from "../SwiperBtns";
 
 const TechnicalClimbing = () => {
   return (
-    <section className="px-4 py-20 md:py-40 relative">
+    <section className="px-4 pb-20 md:pb-40 relative mb-20">
       <div className="max-w-[952px] mx-auto w-full">
         <div className="flex flex-col items-center justify-center gap-4 mb-12">
           <div className="flex flex-col justify-center items-center px-4 md:px-7">

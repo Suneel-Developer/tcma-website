@@ -23,13 +23,18 @@
   background-color: white;
 }
 
-
-
 @keyframes slideIn {
-  from { transform: translateY(100px); opacity: 0; }
-  to { transform: translateY(0); opacity: 1; }
+  from {
+    transform: translateY(100px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
 
 .animate-slideIn {
-  animation: slideIn .6s ease-out forwards;
+  animation: slideIn 0.6s ease-out forwards;
 }
+

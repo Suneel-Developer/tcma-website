@@ -112,15 +112,15 @@ const Header = () => {
   const [isHovering, setIsHovering] = useState(false);
   const menuItems = [
     {
-      title: "技術攀登",
-      links: ["技術攀登 ", "綜觀技術攀登", "台灣室內岩場", "台灣天然岩場"],
-    },
-    {
       title: "公益志工",
       links: ["技術攀登 ", "綜觀技術攀登", "台灣室內岩場", "台灣天然岩場"],
     },
     {
-      title: "種子計畫",
+      title: "技術攀登",
+      links: ["技術攀登 ", "綜觀技術攀登", "台灣室內岩場", "台灣天然岩場"],
+    },
+    {
+      title: "技術攀登",
       links: ["技術攀登 ", "綜觀技術攀登", "台灣室內岩場", "台灣天然岩場"],
     },
   ];

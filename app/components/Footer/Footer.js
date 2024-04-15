@@ -47,7 +47,7 @@ const Footer = () => {
               <img src="/assets/footer-logo.svg" alt="footer-logo" />
               <div className="hidden md:flex flex-col items-center text-center">
                 <span className="text-[#65686C] text-sm font-pingfang-regular tracking-[0.006em]">
-                  © 2023 山盟公益協會
+                  © 2024 山盟公益協會
                 </span>
                 <span className="text-[#65686C] text-sm font-pingfang-regular tracking-[0.006em]">
                   All rights reserved.
@@ -55,8 +55,33 @@ const Footer = () => {
               </div>
             </div>
 
-            <div className="grid grid-cols-2 md:grid-cols-5 gap-10">
+            <div className="grid grid-cols-2 max-w-[800px] md:grid-cols-5 gap-10">
               {/* List 01  */}
+              <ul className="flex flex-col gap-2">
+                <li className="text-primary font-pingfang-heavy text-lg tracking-[0.007em]">
+                  公益行動
+                </li>
+
+                <li>
+                  <Link
+                    href="#"
+                    className="text-black_800 text-[15px] font-pingfang-regular tracking-[0.004em]"
+                  >
+                    登山安全
+                  </Link>
+                </li>
+
+                <li>
+                  <Link
+                    href="#"
+                    className="text-black_800 text-[15px] font-pingfang-regular tracking-[0.004em]"
+                  >
+                    山林環保
+                  </Link>
+                </li>
+              </ul>
+
+              {/* List 02  */}
               <ul className="flex flex-col gap-2">
                 <li className="text-primary font-pingfang-heavy text-lg tracking-[0.007em]">
                   技術攀登
@@ -79,38 +104,12 @@ const Footer = () => {
                     台灣室內岩場
                   </Link>
                 </li>
-
                 <li>
                   <Link
                     href="#"
                     className="text-black_800 text-[15px] font-pingfang-regular tracking-[0.004em]"
                   >
                     台灣天然岩場
-                  </Link>
-                </li>
-              </ul>
-
-              {/* List 02  */}
-              <ul className="flex flex-col gap-2">
-                <li className="text-primary font-pingfang-heavy text-lg tracking-[0.007em]">
-                  公益志工
-                </li>
-
-                <li>
-                  <Link
-                    href="#"
-                    className="text-black_800 text-[15px] font-pingfang-regular tracking-[0.004em]"
-                  >
-                    志工管理制度辦法
-                  </Link>
-                </li>
-
-                <li>
-                  <Link
-                    href="#"
-                    className="text-black_800 text-[15px] font-pingfang-regular tracking-[0.004em]"
-                  >
-                    志工服務項目
                   </Link>
                 </li>
               </ul>
@@ -152,7 +151,7 @@ const Footer = () => {
               {/* List 04  */}
               <ul className="flex flex-col gap-2">
                 <li className="text-primary font-pingfang-heavy text-lg tracking-[0.007em]">
-                  聯絡我們
+                  關於山盟
                 </li>
 
                 <li>
@@ -160,7 +159,7 @@ const Footer = () => {
                     href="#"
                     className="text-black_800 text-[15px] font-pingfang-regular tracking-[0.004em]"
                   >
-                    支持我們
+                    宗旨、目標、起源與章程
                   </Link>
                 </li>
 
@@ -169,7 +168,7 @@ const Footer = () => {
                     href="#"
                     className="text-black_800 text-[15px] font-pingfang-regular tracking-[0.004em]"
                   >
-                    協會現狀
+                    組織架構
                   </Link>
                 </li>
 
@@ -178,7 +177,7 @@ const Footer = () => {
                     href="#"
                     className="text-black_800 text-[15px] font-pingfang-regular tracking-[0.004em]"
                   >
-                    登入會員
+                    理監事成員
                   </Link>
                 </li>
               </ul>
@@ -214,8 +213,7 @@ const Footer = () => {
                     href="#"
                     className="text-black_800 text-[15px] font-pingfang-regular tracking-[0.004em] flex items-center gap-1"
                   >
-                    <img src="/assets/Instagram.svg" alt="Instagram" />
-                    Instagram
+                    聯絡資訊
                   </Link>
                 </li>
               </ul>
@@ -223,7 +221,7 @@ const Footer = () => {
 
             <div className="flex md:hidden flex-col gap-2 items-center">
               <span className="text-[#65686C] text-sm font-pingfang-regular tracking-[0.006em]">
-                © 2023 山盟公益協會
+                © 2024 山盟公益協會
               </span>
               <span className="text-[#65686C] text-sm font-pingfang-regular tracking-[0.006em]">
                 All rights reserved.

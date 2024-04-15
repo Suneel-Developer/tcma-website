@@ -4,7 +4,7 @@ import { MdOutlineKeyboardArrowRight } from "react-icons/md";
 
 const CharityVolunteers = () => {
   return (
-    <div className='relative bg-[url("/assets/charity-mobile-bg.png")] md:bg-[url("/assets/charity-bg.jpg")] flex md:items-center bg-no-repeat w-full bg-cover h-[700px] mb-20 md:mb-40 bg-fixed'>
+    <div className='relative bg-[url("/assets/charity-mobile-bg.png")] md:bg-[url("/assets/charity-bg.jpg")] flex md:items-center bg-no-repeat w-full bg-cover h-[700px] mt-20 md:mt-40 bg-fixed'>
       {/* Top Rounded Border  */}
       <img
         src="/assets/charity-t-border.png"
@@ -38,7 +38,7 @@ const CharityVolunteers = () => {
           </p>
 
           <Link
-            href="#"
+            href="/charity-volunteers"
             className="bg-orange_brown hover:bg-white border-2 border-orange_brown px-5 md:px-6 py-2 md:py-3 flex mt-10 gap-2 items-center text-white hover:text-orange_brown transition-colors duration-300 w-fit text-sm md:text-2xl font-pingfang-heavy tracking-[0.006em]"
           >
             了解公益志工回饋計畫內容

@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import { IoCloseSharp } from "react-icons/io5";
-import { HiMenuAlt3 } from "react-icons/hi";
+import { FaBars  } from "react-icons/fa6";
 import { FaAngleRight } from "react-icons/fa6";
 import Link from "next/link";
 
@@ -33,14 +33,14 @@ const DropdownMenu = () => {
         }`}
       >
         <div className="flex items-center justify-between w-full">
-          <Link href="/" className="h-9">
-            <img src={isOpen ? "/assets/active-logo.svg" : "/assets/logo.svg"} alt="logo" className="h-full w-full bg-cover" />
+          <Link href="/" className="">
+            <img src={isOpen ? "/assets/mobile-blue-logo.svg" : "/assets/mobile-logo.svg"} alt="logo" className="h-full w-full bg-cover" />
           </Link>
           <button onClick={() => setIsOpen(!isOpen)}>
             {isOpen ? (
               <IoCloseSharp className={`text-2xl ${isOpen ? "text-primary" : "text-white"}`} />
             ) : (
-              <HiMenuAlt3 className={`text-2xl ${isOpen ? "text-primary" : "text-white"}`} />
+              <FaBars className={`text-2xl ${isOpen ? "text-primary" : "text-white"}`} />
             )}
           </button>
         </div>

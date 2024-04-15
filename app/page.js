@@ -17,8 +17,8 @@ export default function Home() {
       <Header/>
       <MobileHeader />
       <Hero />
-      <TechnicalClimbing />
       <CharityVolunteers />
+      <TechnicalClimbing />
       <SeedProject id="seedProject" />
       <Footer/>
     </main>
