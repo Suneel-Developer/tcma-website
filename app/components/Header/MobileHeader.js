@@ -11,15 +11,13 @@ const DropdownMenu = () => {
   const [activeMenu, setActiveMenu] = useState("main"); // 'main' or the key of a submenu
 
   const mainLinks = [
-    { name: "路線即時資訊", submenu: "routeInfo" },
-    { name: "技術攀登", submenu: "techClimbing" },
-    { name: "公益志工", submenu: "volunteering" },
+    { name: "公益志工", submenu: "techClimbing" },
+    { name: "技術攀登", submenu: "volunteering" },
     { name: "種子計畫", submenu: "seedProgram" },
   ];
 
   // Example secondary links (you can customize as needed)
   const submenus = {
-    routeInfo: ["綜觀技術攀登", "台灣室內岩場", "台灣天然岩場"],
     techClimbing: ["綜觀技術攀登", "台灣室內岩場", "台灣天然岩場"],
     volunteering: ["綜觀技術攀登", "台灣室內岩場", "台灣天然岩場"],
     seedProgram: ["綜觀技術攀登", "台灣室內岩場", "台灣天然岩場"],
