@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import { IoCloseSharp } from "react-icons/io5";
-import { FaBars  } from "react-icons/fa6";
+import { FaBars } from "react-icons/fa6";
 import { FaAngleRight } from "react-icons/fa6";
 import Link from "next/link";
 
@@ -11,16 +11,16 @@ const DropdownMenu = () => {
   const [activeMenu, setActiveMenu] = useState("main"); // 'main' or the key of a submenu
 
   const mainLinks = [
-    { name: "公益志工", submenu: "techClimbing" },
+    { name: "公益行動", submenu: "techClimbing" },
     { name: "技術攀登", submenu: "volunteering" },
     { name: "種子計畫", submenu: "seedProgram" },
   ];
 
   // Example secondary links (you can customize as needed)
   const submenus = {
-    techClimbing: ["綜觀技術攀登", "台灣室內岩場", "台灣天然岩場"],
+    techClimbing: ["登山安全", "山林環保"],
     volunteering: ["綜觀技術攀登", "台灣室內岩場", "台灣天然岩場"],
-    seedProgram: ["綜觀技術攀登", "台灣室內岩場", "台灣天然岩場"],
+    seedProgram: ["種子計畫內容介紹", "種子訓練課程介紹", "海外移地訓練介紹"],
   };
 
   return (
@@ -32,13 +32,25 @@ const DropdownMenu = () => {
       >
         <div className="flex items-center justify-between w-full">
           <Link href="/" className="">
-            <img src={isOpen ? "/assets/mobile-blue-logo.svg" : "/assets/mobile-logo.svg"} alt="logo" className="h-full w-full bg-cover" />
+            <img
+              src={
+                isOpen
+                  ? "/assets/mobile-blue-logo.svg"
+                  : "/assets/mobile-logo.svg"
+              }
+              alt="logo"
+              className="h-full w-full bg-cover"
+            />
           </Link>
           <button onClick={() => setIsOpen(!isOpen)}>
             {isOpen ? (
-              <IoCloseSharp className={`text-2xl ${isOpen ? "text-primary" : "text-white"}`} />
+              <IoCloseSharp
+                className={`text-2xl ${isOpen ? "text-primary" : "text-white"}`}
+              />
             ) : (
-              <FaBars className={`text-2xl ${isOpen ? "text-primary" : "text-white"}`} />
+              <FaBars
+                className={`text-2xl ${isOpen ? "text-primary" : "text-white"}`}
+              />
             )}
           </button>
         </div>
@@ -66,7 +78,10 @@ const DropdownMenu = () => {
                     className="flex items-center gap-2 w-fit text-xl tracking-[0.018em] font-pingfang-heavy text-primary"
                   >
                     <FaAngleRight className="text-lg rotate-180" />
-                    技術攀登
+                    {
+                      mainLinks.find((link) => link.submenu === activeMenu)
+                        ?.name
+                    }
                   </button>
                   <ul className="flex flex-col gap-3">
                     {submenus[activeMenu].map((link, index) => (
